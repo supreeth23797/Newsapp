@@ -1,6 +1,7 @@
 A News app that uses https://newsapi.org to list "Top Headlines" in the country.
 Top headlines and its Details can be viewed.
 Implemented webview to load original article in the same.
+Implemented Pagination with pagesize as 10.
 
 Tech:
 Android(Java),
