@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.DetailedWebViewActivity">
+
+    <RelativeLayout
+        android:id="@+id/top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="@color/top_bar_bg">
+
+        <ImageView
+            android:id="@+id/actionBack"
+            android:layout_width="@dimen/action_back_height_width"
+            android:layout_height="@dimen/action_back_height_width"
+            android:layout_alignParentStart="true"
+            android:layout_margin="@dimen/margin_left_right_top"
+            android:background="@drawable/round_solid_bg"
+            android:padding="@dimen/action_back_padding"
+            android:src="@drawable/ic_arrow_back" />
+
+        <TextView
+            android:id="@+id/readMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/actionBack"
+            android:text="@string/action_back"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/card_title"
+            android:fontFamily="@font/roboto_slab_regular"/>
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/top_bar">
+
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+
+</RelativeLayout>

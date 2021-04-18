@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="darkgrey">#191819</color>
+    <color name="background">#464646</color>
+    <color name="red">#CE0700</color>
+    <color name="card_title">#f2f2f2</color>
+    <color name="card_info">#bababa</color>
+    <color name="top_bar_bg">#a6000000</color>
+</resources>

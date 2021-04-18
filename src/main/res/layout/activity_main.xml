@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/black"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/headlines"
+        android:fontFamily="@font/roboto_slab_bold"
+        android:padding="@dimen/margin_left_right_top"
+        android:gravity="center"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/headline" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/margin_left_right_top"
+        android:background="@color/background">
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/swipeRefresh">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/recyclerView"/>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

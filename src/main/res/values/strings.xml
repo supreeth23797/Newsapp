@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">News App</string>
+    <string name="headlines">HEADLINES</string>
+    <string name="read_more">Read more</string>
+    <string name="action_back">Back</string>
+    <string name="thats_all">That\'s all for now</string>
+    <string name="check_internet">Check your Internet</string>
+</resources>
