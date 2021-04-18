@@ -6,8 +6,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.AbsListView;
 import android.widget.Toast;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import com.news.newsapp.Adapter;
 import com.news.newsapp.ApiClient;
 import com.news.newsapp.model.Articles;
@@ -85,7 +89,16 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Calling for first time, so no page increment
-        retrieveJson();
+        ConnectivityManager connectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = connectivityManager.getActiveNetworkInfo();
+        if (netInfo == null) {
+            // Offline handling, load previously saved json data
+            Toast.makeText(MainActivity.this,
+                    getResources().getString(R.string.check_internet),
+                    Toast.LENGTH_SHORT).show();
+        } else {
+            retrieveJson();
+        }
     }
 
     public void retrieveJson() {
@@ -120,5 +133,11 @@ public class MainActivity extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        // Save mArticles data in db to load in offline mode
     }
 }

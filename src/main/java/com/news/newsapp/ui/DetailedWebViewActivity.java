@@ -5,13 +5,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.ImageView;
+import android.widget.RelativeLayout;
+
 import androidx.appcompat.app.AppCompatActivity;
 import com.news.newsapp.R;
 
 public class DetailedWebViewActivity extends AppCompatActivity {
     WebView mWebView;
-    ImageView mActionBack;
+    RelativeLayout mActionBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +20,7 @@ public class DetailedWebViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detailedwebview);
 
         mWebView = findViewById(R.id.webView);
-        mActionBack = findViewById(R.id.actionBack);
+        mActionBack = findViewById(R.id.top_bar);
         mActionBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

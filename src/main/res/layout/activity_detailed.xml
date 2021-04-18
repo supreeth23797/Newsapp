@@ -41,6 +41,7 @@
                     android:background="@drawable/round_solid_bg"
                     android:padding="@dimen/action_back_padding"
                     android:layout_margin="@dimen/margin_left_right_top"
+                    android:foreground="?selectableItemBackgroundBorderless"
                     android:layout_alignParentStart="true"
                     android:src="@drawable/ic_arrow_back" />
 
@@ -51,6 +52,7 @@
                     android:layout_centerVertical="true"
                     android:text="@string/read_more"
                     android:padding="@dimen/margin_left_right_top"
+                    android:foreground="?selectableItemBackgroundBorderless"
                     android:textColor="@android:color/white"
                     android:layout_alignParentEnd="true"
                     android:textSize="@dimen/card_title"
