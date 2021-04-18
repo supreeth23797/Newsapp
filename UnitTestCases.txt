@@ -6,6 +6,7 @@ result: PASS
 case2: Longer Titles strings (>5 lines) must be ellipsized at the end with
 result: PASS
 
+#For phones with small screen size
 case3: Detailed news view (title, source and description)must be scrollable if description and titles are lengthy
 result: PASS
 
