@@ -1,0 +1,26 @@
+UnitTest cases:
+
+case1: Crash free
+result: PASS
+
+case2: Longer Titles strings (>5 lines) must be ellipsized at the end with
+result: PASS
+
+case3: Detailed news view (title, source and description)must be scrollable if description and titles are lengthy
+result: PASS
+
+#Pagination
+case4: Must load 10 titles at a time. When 10th headline is reached, must load next 10 headlines
+result: PASS
+
+case5: In detailed news view, when "source" string is lengthy(>2) must be ellipsized and must not overlap with date
+result: PASS
+
+case6: When swiped down to refresh, must load latest 10 headlines
+result: PASS
+
+case7: On click of "Read more", original article in webview must be loaded
+result: PASS
+
+case8: When device is rotated, it must stay in portrait mode
+result: PASS
