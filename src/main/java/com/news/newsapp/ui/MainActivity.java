@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.Toast;
@@ -20,7 +21,6 @@ import com.news.newsapp.R;
 import com.news.newsapp.Utils;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -30,8 +30,6 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView mRecyclerView;
     SwipeRefreshLayout mSwipeRefreshLayout;
     Adapter mAdapter;
-    String mCountry;
-    Locale mLocale;
     List<Articles> mArticles = new ArrayList<>();
     LinearLayoutManager mLinearLayoutManager;
     int mVisibleItemsCount = 0, mTotalItemsCount = 0, mScrolledItemsCount = 0;
@@ -49,10 +47,6 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(mLinearLayoutManager);
         mAdapter = new Adapter(MainActivity.this, mArticles);
         mRecyclerView.setAdapter(mAdapter);
-
-        mLocale = Locale.getDefault();
-        mCountry = mLocale.getCountry();
-
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
@@ -106,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
         Call<Headlines> call;
         call = ApiClient.getInstance()
                 .getApi()
-                .getTopHeadlines( Utils.API_KEY, mCountry, Utils.PAGE_SIZE, mPage);
+                .getTopHeadlines( Utils.API_KEY, Utils.COUNTRY, Utils.PAGE_SIZE, mPage);
         call.enqueue(new Callback<Headlines>() {
             @Override
             public void onResponse(Call<Headlines> call, Response<Headlines> response) {
