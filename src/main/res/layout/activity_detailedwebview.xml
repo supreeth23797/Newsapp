@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:background="@color/top_bar_bg">
+        android:background="@color/darkgrey">
 
         <ImageView
             android:id="@+id/actionBack"
