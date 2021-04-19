@@ -121,6 +121,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<Headlines> call, Throwable t) {
+                mPage--;
                 mSwipeRefreshLayout.setRefreshing(false);
                 Toast.makeText(MainActivity.this,
                         getResources().getString(R.string.check_internet),
