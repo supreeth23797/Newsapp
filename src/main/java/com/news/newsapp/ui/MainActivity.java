@@ -131,8 +131,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onBackPressed() {
-        super.onBackPressed();
+    protected void onDestroy() {
+        super.onDestroy();
         // Save mArticles data in db to load in offline mode
     }
 }
