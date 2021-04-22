@@ -12,4 +12,6 @@ Info: Get your API key from https://newsapi.org/ and update the same in src/main
 
 Screenshots:
 
-![1618811033774](https://user-images.githubusercontent.com/37664479/115187181-821de000-a100-11eb-8832-f21b67921189.jpg)
+![115187181-821de000-a100-11eb-8832-f21b67921189](https://user-images.githubusercontent.com/37664479/115744790-81ab7080-a3b0-11eb-9f2b-47fdd724348e.jpg)
+
+
