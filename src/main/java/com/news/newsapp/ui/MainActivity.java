@@ -133,6 +133,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        // Save mArticles data in db to load in offline mode
+        // Save latest mArticles data in db to load in offline mode
     }
 }
