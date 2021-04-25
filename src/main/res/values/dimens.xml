@@ -13,4 +13,5 @@
     <dimen name="detail_info_margin_top">64dp</dimen>
     <dimen name="action_back_height_width">42dp</dimen>
     <dimen name="action_back_padding">4dp</dimen>
+
 </resources>
