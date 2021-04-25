@@ -8,6 +8,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.LinearLayout;
@@ -58,10 +59,10 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView = findViewById(R.id.recyclerView);
         mNoInternet = findViewById(R.id.noInternet);
 
+        mArticles = new ArrayList<>();
         mConnectivityManager = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         mLinearLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLinearLayoutManager);
-        mArticles = new ArrayList<>();
 
         mSharedPreferences = getPreferences(MODE_PRIVATE);
         mPreferenceEditor = mSharedPreferences.edit();
@@ -109,15 +110,18 @@ public class MainActivity extends AppCompatActivity {
         if (netInfo == null) {
             Gson gson = new Gson();
             Type type = new TypeToken<List<Articles>>(){}.getType();
-            mArticles = gson.fromJson(mSharedPreferences.getString("articles", ""), type);
+            List<Articles> tempList = gson.fromJson(mSharedPreferences.getString("articles", ""), type);
+            if(tempList!=null){
+                mArticles = tempList;
+            }
             mPage = mSharedPreferences.getInt("page", 1);
             if(isNoArticlesToShow()){
                 mNoInternet.setVisibility(View.VISIBLE);
-                return;
             }
         } else {
             retrieveJson();
         }
+
         mAdapter = new Adapter(MainActivity.this, mArticles);
         mRecyclerView.setAdapter(mAdapter);
     }
