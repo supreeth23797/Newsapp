@@ -2,11 +2,13 @@ A News app that uses https://newsapi.org to list "Top Headlines" in the country.
 Top headlines and its Details can be viewed.
 Implemented webview to load original article in the same.
 Implemented Pagination with pagesize as 10.
+Works in offline mode.
 
 Tech:
 Android(Java),
 Retrofit,
-GSON
+GSON,
+SharedPreferences
 
 Info: Get your API key from https://newsapi.org/ and update the same in src/main/java/com/news/newsapp/Utils.java file before running the code
 
