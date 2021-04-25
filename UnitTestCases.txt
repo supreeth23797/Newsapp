@@ -25,3 +25,11 @@ result: PASS
 
 case8: When device is rotated, it must stay in portrait mode
 result: PASS
+
+#offline mode
+case9: When device is offline and launched for the first time, an image must be shown saying no internet
+result: PASS
+
+case10: when app is launched, from 2nd time onwards, when device is offline, previously loaded headlines must be shown with details
+result: PASS
+
